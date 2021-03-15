@@ -1,5 +1,5 @@
 <?php
-$bdd = 'mysql:host=127.0.0.1;dbname=product-hunt';
+$bdd = 'mysql:host=127.0.0.1;dbname=Product-hunt';
 $user = 'root';
 $password = '';
 
