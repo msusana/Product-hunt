@@ -12,7 +12,6 @@
     <a class="navbar-brand" href="#">Navbar</a>
     <form class="d-flex" method="POST">
         <input class="form-control me-2" type="search" name="search" placeholder="Search" id="search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -33,20 +32,27 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            ...
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Toutes les catégories</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="/categories/tech.php">TECH</a></li>
+            <li><a class="dropdown-item" href="/categories/home.php">HOME</a></li>
+            <li><a class="dropdown-item" href="/categories/comics.php">COMICS & GRAPHI</a></li>
+            <li><a class="dropdown-item" href="/categories/web.php">WEB APP</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
       </ul>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
 
+      <?php if (isset($_SESSION['id'])){ ?>
+        <a href="/recuperation-donnees/deco_login.php"><button class="btn btn-secondary me-md-2" type="button">LOG OUT</button></a>
+      <?php }else{ ?>
+        <a href="/structure-page/login.php"><button class="btn btn-secondary me-md-2" type="button">LOG IN</button></a>
+        <a href="/structure-page/signup.php"><button class="btn btn-danger" type="button" >SIGN UP</button></a>
+      <?php } ?>
+      </div>
     </div>
   </div>
 </nav>

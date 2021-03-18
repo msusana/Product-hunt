@@ -4,4 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 <script src="/Ajax/search.js"></script>
+<script src="/Ajax/up.js"></script>
+<script src="/javascript/javascript.js"></script>
+<script src="/Ajax/commentaire.js"></script>
 </footer>
