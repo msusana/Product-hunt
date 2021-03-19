@@ -7,9 +7,24 @@ body {
     background-color: white;
 }
 
+.signup {
+
+    margin-top: 150px;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: solid 1px white;
+    background-color: white;
+    border-radius: 5px;
+    height: 320px;
+    box-shadow: 10px 10px 10px 10px #aaa;
+}
+
 .container {
     margin-top: 10vh;
 }
+
 .flex-container{
     display: flex;
     flex-wrap: nowrap;
@@ -31,19 +46,17 @@ body {
     width: 400px;
     margin: 100px 150px;
 }
-.col-md-3 {
+/* .col-md-3 {
     display: flex;
      flex-direction: column;
      justify-content: center;
  
  }
-
 .col-md-2 {
    display: flex;
     flex-direction: column;
     justify-content: center;
-
-}
+} */
 .produit{
     width: 60vw;
     margin-left: 10vw;
@@ -114,41 +127,71 @@ body {
     display: flex;
     flex-direction: column;
     opacity: 0;
-    overflow: scroll;
+    overflow-y: scroll;
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .popup-content.active {
 
     opacity: 1;
     top: 10%;
-    width: 50%;
+    width: 80%;
     height: auto;
     bottom: 10%;
-    
+    padding: 61px;
+    background-color: whitesmoke;
 }
 
 .popup-header {
-    
-    background-color: rgb(55, 66, 223);
     color: black;
 }
 
 .popup-body{
-    height: 80%;
+    height: auto;
     padding: 2%;
     background-color: white;
 }
-.popup-body #carouselExampleIndicators {
-    width: 100%;
-}
+
 .popup-footer{
 
-    height: 10%;
+    height: auto;
     padding: 2%;
-    display: flex;
-    justify-content: flex-end;
-    background-color: rgb(233, 233, 233);
+    background-color: whitesmoke;
 }
 textarea{ 
-    width: 900px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.commentaires {
+    background-color: rgb(227, 226, 235); 
+    border-radius: 10px;
+    margin: 10px;
+    padding: 3px;
+}
+
+.nblike{
+
+    display: flex;
+    justify-content: flex-end;
+    font-size: 15px;
+    margin: 5px;
+
+}
+.produit:hover {
+    width: 65vw;
+    margin-left: 10vw;
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px 10px #aaa;
+
+}
+.navbar-brand {
+
+    width: 50px;
+    height: 50px;
+    border: none;
+    background-color: red;
+    border-radius: 50px;
+    text-align: center;
+    font-size: x-large;
 }

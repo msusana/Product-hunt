@@ -9,9 +9,11 @@ include 'structure-page/head.php'; ?>
         </div>
 <?php endif;?>
 <div id='result'></div>
+<div id='techs'><?php include 'categories/home.php'; ?> </div>
 <div class='container'>
-    <div id='affichage'></div>
-<?php include 'recuperation-donnees/affichage.php'; ?>
+    <div id='affichage'>
+        <?php include 'recuperation-donnees/affichage.php'; ?>
+    </div>
 </div>
 </body>
 

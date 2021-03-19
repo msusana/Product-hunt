@@ -65,35 +65,46 @@ cards.forEach(card => {
             modal.innerHTML = data
         })
     })
+});/*
+$(document).ready(function(){
+    $("#btn").click(function(){
+        $(".popup").modal('hide');
+    });
 });
+*/
+
+
 //AJAX pour récupérer les infos de chaque produit pour conter les likes
 
-let likes = document.querySelectorAll('.like')
+/*let likes = document.querySelectorAll('.like')
 
 likes.forEach(like => {
     
     like.addEventListener('click', function(){
-        formData = new FormData()
-        formData.append('product_id', like.getAttribute('id'))
-        
-        fetch('count_up.php', {
-            method: "post",
-            body: formData
-        }).then((response)=>{
-            return response.text()
-        })
-    })
-});
-
-// couleur like
-/*function up(){
-let ups = document.querySelectorAll("#up");
-
-ups.forEach(up => { 
-up.addEventListener('click' ,function(){
-   up.classList.remove("up");
-   up.classList.add("liked");
-    })
+        ;
 })
-}*/
+})
+*/
 
+
+
+     function tech(){
+       let categorie = document.getElementById("tech");
+       console.log(categorie);
+       let tech = document.getElementById("affichage");
+       
+    
+        formData = new FormData()
+        formData.append('categorie', categorie.getAttribute('id'))
+        
+    
+        fetch('/categories/home.php', {
+            method: "post",
+            body: formData,
+        }).then((response)=>{
+            return response.text();  
+        }).then((data)=>{
+            console.log(data);
+            tech.innerHTML = data
+        })
+    }

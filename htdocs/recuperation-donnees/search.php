@@ -11,7 +11,7 @@ foreach($result2 as $product)
 <div class="card mb-3">
   <div class="row no-gutters">
     <div class="col-md-1">
-      <img src="<?=$product['logo']?>" class="card-img" alt="...">
+      <img src="/<?=$product['logo']?>" class="card-img" alt="...">
     </div>
     <div class="col-md-11">
       <div class="card-body">

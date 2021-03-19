@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="/style.css?v=<?php echo time(); ?>">
     <title>Product hunt</title>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="/index2.php" style="color: white">P</a>
     <form class="d-flex" method="POST">
         <input class="form-control me-2" type="search" name="search" placeholder="Search" id="search" aria-label="Search">
       </form>
@@ -35,10 +35,10 @@
             ...
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Toutes les catégories</a></li>
+            <li><a class="dropdown-item" href="/index2.php">Toutes les catégories</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="/categories/tech.php">TECH</a></li>
-            <li><a class="dropdown-item" href="/categories/home.php">HOME</a></li>
+            <li><a class="dropdown-item" href="#" onclick="tech();" >TECH</a></li>
+            <li><a class="dropdown-item tech" onclick="tech();" id='tech'>HOME</a></li>
             <li><a class="dropdown-item" href="/categories/comics.php">COMICS & GRAPHI</a></li>
             <li><a class="dropdown-item" href="/categories/web.php">WEB APP</a></li>
           </ul>

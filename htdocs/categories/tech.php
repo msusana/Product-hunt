@@ -1,10 +1,6 @@
 <?php
 session_start();
-require_once(__DIR__."/../connexion/bdd.php");?>
-<head>
-<link rel="stylesheet" href="../style.css">
-</head>
-<?php
+require_once(__DIR__."/../connexion/bdd.php");
 include '../structure-page/head.php'; ?>
 <body>
 
@@ -32,7 +28,11 @@ foreach ($result as $tech): ?>
         <div class="col-md-3" id="like">
             <div class='up' id='<?=$tech['id']?>'>
                 <ion-icon name="caret-up-outline"></ion-icon>
-                    <?php /*include '../count_up.php'; */?>
+                <?php 
+                $stmt = $pdo->prepare("SELECT COUNT(*) AS like_nb FROM likes WHERE id_product = ?");
+                $stmt->execute([($tech['id'])]); 
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                echo '<p>'.$result['like_nb']. '</p>';?>
             </div>
         </div>
     </div>

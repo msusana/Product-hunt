@@ -8,6 +8,7 @@ $(document).ready(function() {
             url  : '/recuperation-donnees/up.php',
             data : {id:id},
             success : function(data){
+                
                 return data;
              }
         })
@@ -15,11 +16,18 @@ $(document).ready(function() {
 });
 
 
-/*function autoLoad(){
+function load_up(data){
+      $('.like').load('/load/up2.php', function () {
+           $(this).find(".like").replaceWith($(this).text());
+      });
+   }
+   
+/*
+function autoLoad(){
     $.ajax({
     url: '/recuperation-donnees/affichage.php',
     success: function(data){
-        $('#like').html(data);
+        $('.like').html(data);
     }
     });
 }
