@@ -65,46 +65,75 @@ cards.forEach(card => {
             modal.innerHTML = data
         })
     })
-});/*
-$(document).ready(function(){
-    $("#btn").click(function(){
-        $(".popup").modal('hide');
-    });
 });
-*/
-
-
-//AJAX pour récupérer les infos de chaque produit pour conter les likes
-
-/*let likes = document.querySelectorAll('.like')
-
-likes.forEach(like => {
-    
-    like.addEventListener('click', function(){
-        ;
-})
-})
-*/
-
-
-
-     function tech(){
-       let categorie = document.getElementById("tech");
-       console.log(categorie);
+function tech(){
+       let techs = document.querySelector(".tech");
        let tech = document.getElementById("affichage");
-       
+        formData1 = new FormData()
+        formData1.append('categorie', techs.getAttribute('id'))
+        console.log(formData1)
     
-        formData = new FormData()
-        formData.append('categorie', categorie.getAttribute('id'))
-        
-    
-        fetch('/categories/home.php', {
+        fetch('/categories/categories.php', {
             method: "post",
-            body: formData,
+            body: formData1,
         }).then((response)=>{
             return response.text();  
         }).then((data)=>{
-            console.log(data);
+           console.log(data)
             tech.innerHTML = data
         })
     }
+
+function home(){
+    let homes = document.querySelector('.home')
+    let home = document.querySelector('#affichage')
+    
+            formData2 = new FormData()
+            formData2.append('categorie', homes.getAttribute('id'))
+            
+            fetch('/categories/categories.php', {
+                method: "post",
+                body: formData2
+            }).then((response)=>{
+                return response.text()
+            }).then((data)=>{
+                home.innerHTML = data
+            })
+        }    
+
+function web(){
+            let webs = document.querySelector('.web')
+            let web = document.querySelector('#affichage')
+            
+                    formData3 = new FormData()
+                    formData3.append('categorie', webs.getAttribute('id'))
+                    
+                    fetch('/categories/categories.php', {
+                        method: "post",
+                        body: formData3
+                    }).then((response)=>{
+                        return response.text()
+                    }).then((data)=>{
+                        web.innerHTML = data
+                    })
+                } 
+
+function comics(){
+    let comicss = document.querySelector('.comics')
+    let comics = document.querySelector('#affichage')
+                    
+    formData4 = new FormData()
+    formData4.append('categorie', comicss.getAttribute('id'))
+                            
+    fetch('/categories/categories.php', {
+    method: "post",
+    body: formData4
+     }).then((response)=>{
+         console.log(response);
+    return response.text()
+    }).then((data)=>{
+    comics.innerHTML = data
+    })
+}    
+                   
+        

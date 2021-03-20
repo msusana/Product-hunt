@@ -8,19 +8,16 @@ $stmt2->execute();
 $result2 = $stmt2->fetchAll();
 foreach($result2 as $product) 
 { ?>
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <div class="col-md-1">
-      <img src="/<?=$product['logo']?>" class="card-img" alt="...">
+<div class="container search">
+  <div class="row">
+    <div class="col-4">
+          <img src="/<?=$product['logo']?>" class="card-img-top" alt="...">
     </div>
-    <div class="col-md-11">
-      <div class="card-body">
-  <div class="card-body">
-    <h5 class="card-title">"<?=$product['name-product']?>"</h5>
-    <p class="card-text"><?=$product['descriptif']?> </p>
+        <div class="col-6">
+      <p class="title">"<?=$product['name-product']?>"</p>
     </div>
+      
     </div>
-  </div>
-</div>
+    <p class="descriptif"><?=$product['descriptif']?> </p>
 </div>
 <?php }

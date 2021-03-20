@@ -9,11 +9,10 @@ if (isset($_POST['product_id'])) :
 
                 <?php foreach($result as $commentaire) :?>
                     <div class="commentaires" >
-                            <?php /*$dateParts= explode("-", $commentaire["created_at"]);
-                            $dateFormatted = $dateParts[2]. "/".$dateParts[1]. "/" .$dateParts[0];*/
+                            <?php 
                             $timeparts= explode(":", $commentaire["created_at"]);
                             $timeFormatted =$timeparts[0]. "h" .$timeparts[1];?>
-                        <p class="nickname"> <b> <?=$commentaire['nickname']?> </b> Post : <?= $timeFormatted ?></p>
+                        <p class="nickname"> <b> <?=$commentaire['nickname']?> </b> </br><b>Post :</b> <?= $timeFormatted ?></p>
                         <p class="commentaire"> <?=$commentaire['text_commentaire']?></p>
                     </div>
                 <?php  endforeach;?><?php  endif;?>

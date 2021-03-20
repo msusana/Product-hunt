@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION['id']);
 include 'structure-page/head.php'; ?>
 <body>
 <?php if (!empty($_GET["message"])) : ?>
@@ -8,11 +7,25 @@ include 'structure-page/head.php'; ?>
             <?=$_GET["message"]?>
         </div>
 <?php endif;?>
-<div id='result'></div>
-<div id='techs'><?php include 'categories/home.php'; ?> </div>
+
+<div class='selection'>
+<button class='tech' id='tech' onclick="tech();">Tech</button>
+<button class='home' id='home' onclick="home();">HOME</button>
+<button class='web' id='WEB APP' onclick="web();">WEB APP</button>
+<button class='comics' id='COMICS AND GRAPHI' onclick="comics();">COMICS</button>
+</div>
+
+<div id='techs'></div>
 <div class='container'>
-    <div id='affichage'>
-        <?php include 'recuperation-donnees/affichage.php'; ?>
+    <div class='row'>
+        <div class='col-sm-3 col-md-10 '>
+            <div id='affichage'>
+                <?php include 'recuperation-donnees/affichage.php'; ?>
+            </div>
+        </div>
+        <div class='col-sm-2 col-md-2 '>
+            <div id='result'></div>   
+        </div>
     </div>
 </div>
 </body>

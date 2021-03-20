@@ -1,14 +1,14 @@
 $(document).ready(function() {
     $(".like").on("click", function(){
         var id = this.id;
-        let upVote = this
+        let like = this
 
         $.ajax({                
             type : 'POST',
             url  : '/recuperation-donnees/up.php',
             data : {id:id},
             success : function(data){
-                
+                getUp(like)
                 return data;
              }
         })
@@ -16,23 +16,23 @@ $(document).ready(function() {
 });
 
 
-function load_up(data){
-      $('.like').load('/load/up2.php', function () {
-           $(this).find(".like").replaceWith($(this).text());
-      });
-   }
-   
-/*
-function autoLoad(){
-    $.ajax({
-    url: '/recuperation-donnees/affichage.php',
-    success: function(data){
-        $('.like').html(data);
-    }
-    });
+function getUp(like){
+
+         formData = new FormData()
+         formData.append('product_id', like.getAttribute('id'))
+         
+     
+         fetch('/load/up2.php', {
+             method: "post",
+             body: formData,
+         }).then((response)=>{
+             return response.text();  
+         }).then((data)=>{
+             console.log(data);
+             like.innerHTML = data
+    
+         })
 }
 
-$(document).ready(function()
-{
-    setInterval(autoLoad, 3000);
-});*/
+
+

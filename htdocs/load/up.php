@@ -7,7 +7,8 @@
                 $resultat = $req->fetch();?>
                <div class=" 
 <?php if (!$resultat){
-    echo 'up';
+    echo 'ups';
 }else{
     echo 'liked';
-}?>">
+}
+?>">

@@ -17,23 +17,21 @@ if (isset($_POST['product_id'])) :
     ?>
 
 <div class="popup-header">
-        <div class="card mb-3 modal-content" >
-            <div class="row no-gutters">
-                <div class="col-md-2">
-                    <img src="<?=$product['logo']?>" class="card-img" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">"<?=$product['name-product']?>"</h5>
-                        <p class="card-text"><?=$product['descriptif']?> </p>
-                        <p class="card-text"><?=$product['categories']?> </p>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                </div>
-            </div> 
-         </div>  
+    <div class="container modals">
+    <div class="row">
+        <div class="col-12">
+            <img src="/<?=$product['logo']?>" class="card-img-top" alt="...">
+        </div>
+            <div class="col-12">
+                </br><p class="titles">"<?=$product['name-product']?>"</p>
+        </div>
+        
+        </div>
+        <p class="descriptif"><?=$product['descriptif']?> </p>
+        <p><?=$product['categories']?> </p>
     </div>
+         
+</div>
 
     <div class="popup-body">
 
@@ -74,20 +72,18 @@ if (isset($_POST['product_id'])) :
             <div class="commentaire-list">
                 <?php foreach($result as $commentaire) :?>
                     <div class="commentaires" >
-                            <?php /*$dateParts= explode("-", $commentaire["created_at"]);
-                            $dateFormatted = $dateParts[2]. "/".$dateParts[1]. "/" .$dateParts[0];*/
+                            <?php
                             $timeparts= explode(":", $commentaire["created_at"]);
                             $timeFormatted =$timeparts[0]. "h" .$timeparts[1];?>
-                        <p class="nickname"> <b> <?=$commentaire['nickname']?> </b> Post : <?= $timeFormatted ?></p>
+                        <p class="nickname"> <b> <?=$commentaire['nickname']?> </b></br><b> Post :</b> <?= $timeFormatted ?></p>
                         <p class="commentaire"> <?=$commentaire['text_commentaire']?></p>
                     </div>
                 <?php  endforeach;?>
             </div>
                 <div  id="like">
                     <div class='nblike' id='<?=$product['id']?>'>
-                        <p>Nombre de likes : 
+                        <p class='ion'><ion-icon name="caret-up-outline"></ion-icon></p></br>
                         <?php include 'recuperation-donnees/count_up.php' ?>
-                        </p>
                     </div> 
                 </div> 
                 
@@ -96,7 +92,6 @@ if (isset($_POST['product_id'])) :
                 <textarea name="commentaires" id="commentaire" placeholder="votre commentaire..."> </textarea>
                 <button class="btn btn-primary" id='envoyer' onclick="send();">Envoyer</button>
                
-                <button type="button" class="btn btn-secondary" id='btn' data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
